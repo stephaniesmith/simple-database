@@ -10,6 +10,9 @@
     "test": "npm run test:run",
     "start": "npm run test:run -- --watch"
   },
+  "jest": {
+    "watchPathIgnorePatterns": ["cats"]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/stephaniesmith/simple-database.git"
