@@ -23,7 +23,7 @@ describe('store', () => {
         });
     });
 
-    it('saves a cat', done => {
+    it('saves and gets a cat', done => {
         const store = new Store(rootDirectory);
         const TC = {
             name: 'TC'
