@@ -68,7 +68,8 @@ describe('store', () => {
 
             store.delete(cat._id, (err, removed) => {
                 if(err) return done(err);
-                assert.deepEqual(removed, { removed: true })
+                assert.deepEqual(removed, { removed: true });
+                
             })
             done();
         })
