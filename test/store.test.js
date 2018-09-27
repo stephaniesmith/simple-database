@@ -50,9 +50,28 @@ describe('store', () => {
 
         store.get(badId, (err, tinyCat) => {
             if(err) return done(err);
-            console.log(tinyCat);
             assert.equal(tinyCat, null);
             done();
         })
     })
+
+    it('saves and removes a cat', done => {
+        const store = new Store(rootDirectory);
+        const TC = {
+            name: 'TC'
+        };
+
+        store.save(TC, (err, cat) => {
+            if(err) return done(err);
+
+            TC._id = cat._id;
+
+            store.delete(cat._id, (err, removed) => {
+                if(err) return done(err);
+                assert.deepEqual(removed, { removed: true })
+            })
+            done();
+        })
+    })
+
 })
