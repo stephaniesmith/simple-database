@@ -49,6 +49,8 @@ describe('store', () => {
         const badId = 'badId'
 
         store.get(badId, (err, tinyCat) => {
+            if(err) return done(err);
+            console.log(tinyCat);
             assert.equal(tinyCat, null);
             done();
         })
