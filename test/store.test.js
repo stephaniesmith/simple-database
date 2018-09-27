@@ -44,7 +44,7 @@ describe('store', () => {
         })
     })
 
-    it('bad id', done => {
+    it.skip('bad id', done => {
         const store = new Store(rootDirectory);
         const badId = 'badId'
 
