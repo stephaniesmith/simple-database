@@ -44,5 +44,13 @@ describe('store', () => {
         })
     })
 
-    
+    it('bad id', done => {
+        const store = new Store(rootDirectory);
+        const badId = 'badId'
+
+        store.get(badId, (err, tinyCat) => {
+            assert.equal(tinyCat, null);
+            done();
+        })
+    })
 })
