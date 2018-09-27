@@ -33,6 +33,7 @@ describe('store', () => {
             if(err) return don(err);
 
             assert.ok(cat._id);
+            assert.deepEqual(cat, { _id: cat._id, ...TC })
             done();
         })
     })
