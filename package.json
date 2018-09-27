@@ -11,7 +11,9 @@
     "start": "npm run test:run -- --watch"
   },
   "jest": {
-    "watchPathIgnorePatterns": ["cats"]
+    "watchPathIgnorePatterns": [
+      "cats"
+    ]
   },
   "repository": {
     "type": "git",
@@ -26,6 +28,7 @@
   "homepage": "https://github.com/stephaniesmith/simple-database#readme",
   "dependencies": {
     "mkdirp": "^0.5.1",
+    "shortid": "^2.2.13",
     "superagent": "^4.0.0-beta.5"
   },
   "devDependencies": {
