@@ -30,10 +30,16 @@ describe('store', () => {
         };
 
         store.save(TC, (err, cat) => {
-            if(err) return don(err);
+            if(err) return done(err);
+
+            TC._id = cat._id;
 
             assert.ok(cat._id);
-            assert.deepEqual(cat, { _id: cat._id, ...TC })
+            assert.deepEqual(cat, TC)
+            store.get(cat._id, (err, tinyCat) => {
+                if(err) return done(err);
+                assert.deepEqual(tinyCat, TC)
+            })
             done();
         })
     })
